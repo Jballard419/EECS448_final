@@ -1,4 +1,23 @@
-window.CLIENT_ID = 'chzhhf3qvb0bv89z29je42su5rm30zo'; // set to http://localhost.
+//var regex= /[\x00-\x7F]*/;
+//var sub = str.url(27,33);
+//document.getElementById("mainID").innerHTML ="Page path is " + window.location.pathname;
+
+var path = window.location.pathname.toString();
+var substring = path.substring(2,7);
+alert(substring);
+if(substring == 'jrlee')
+{
+  window.CLIENT_ID = 'tn1skh051b84wkb0w2ny2ssjdnf0vlv'; // set to http://localhost.
+
+}else if (substring == 'jball')
+{
+  window.CLIENT_ID = 'chzhhf3qvb0bv89z29je42su5rm30zo'; // set to http://localhost.
+}else if(substring == 'bgive')
+{
+  //TODO add brandon's CLIENT_ID
+    window.CLIENT_ID = '7uoxuhkie51y95c9xcqfp5shf5zxq6b';
+}
+
 $(function() {
   // Initialize. If we are already logged in, there is no
   // need for the connect button
