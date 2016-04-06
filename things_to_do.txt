@@ -21,6 +21,7 @@ FIND other features to add
 
   show multiple chats
   Spam multiple chats at once/ get banned by Twitch  ?
+Spam count?
 
 
   add filters to randomizer

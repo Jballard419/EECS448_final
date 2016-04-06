@@ -64,7 +64,8 @@ $rand_keys = array_rand($urlarr);
 
 $url= $urlarr[$rand_keys];
 
-echo "<br> <a href=\"$url\"> random stream</a> </br>" ;
+header('Location: '.$url);
+die();
 
 
  ?>
