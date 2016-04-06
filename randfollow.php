@@ -38,9 +38,9 @@ for ($i=0; $i < $temp ; $i++) {
   if ($datastream['streams']!= null) {
     # code...
 
-    $url=$dataArray['follows'][$i]['channel']['url'];
+    $urlarr[$j]= $dataArray['follows'][$i]['channel']['url'];
 
-    $urlarr[$j]= $url;
+
     $j=$j+1;
 
 
