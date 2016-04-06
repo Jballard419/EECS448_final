@@ -27,30 +27,41 @@ if($length>100){
   $temp=$length;
 }
 
+$name = array();
+
+
+if (isset($_POST['on'])) {
 
 for ($i=0; $i < $temp ; $i++) {
-  $name= $dataArray['follows'][$i]['channel']['name'];
-  if (isset($_POST['on'])) {
-    # code...
-
-  $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?channel=' .$name .''), true);; // TO DO make this run quicker
-  if ($datastream['streams']!= null) {
-    # code...
-
-  $url=$dataArray['follows'][$i]['channel']['url'];
-
-
-
-  echo "<br> <a href=\"$url\">" .$name ."</a> </br>";
-}
-
-} else {
-  $url=$dataArray['follows'][$i]['channel']['url'];
-
-  echo "<br> <a href=\"$url\">" .$name ."</a> </br>";
+  $name[$i]= $dataArray['follows'][$i]['channel']['name'];
 }
 
 
+
+ $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);; // TO DO make this run quicker
+
+for ($i=0; $i < count($datastream['streams']) ; $i++) {
+  # code...
+
+  if ($datastream['streams'][$i]["_id"]!= null) {
+    # code...
+
+  $url=$datastream['streams'][$i]['channel']['url'];
+
+
+
+  echo "<br> <a href=\"$url\">" .$datastream['streams'][$i]['channel']['name'] ."</a> </br>";
+      }
+
+        }
+}else {
+
+
+  for ($i=0; $i < $temp ; $i++) {
+    $url=$dataArray['follows'][$i]['channel']['url'];
+   echo "<br> <a href=\"$url\">" .$dataArray['follows'][$i]['channel']['name'] ."</a> </br>";
+
+ }
 }
 
 
