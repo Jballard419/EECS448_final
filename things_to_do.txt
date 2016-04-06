@@ -1,0 +1,40 @@
+things to DO
+
+
+1) get stream online quicker/ better
+  a. list of channels
+  b. Token kraken/streams/follows
+
+
+2) redirect to live twitch
+
+
+
+
+
+3) random stream for game
+
+5)CSS
+
+
+FIND other features to add
+
+  show multiple chats
+  Spam multiple chats at once/ get banned by Twitch  ?
+
+
+  add filters to randomizer
+
+
+
+
+
+stats
+
+
+Later
+
+
+4)  google chrome extension/ firefox  extension/ both ?
+
+Spam Chats

@@ -1,0 +1,8 @@
+https://github.com/justintv/Twitch-API
+
+
+https://github.com/justintv/twitch-js-sdk
+
+
+https://discuss.dev.twitch.tv/c/api
+ http://people.eecs.ku.edu/~jballard/Final/index.html
