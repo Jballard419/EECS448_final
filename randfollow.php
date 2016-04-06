@@ -5,12 +5,10 @@ ini_set("display_errors", 1);
 $user= $_POST["user"];
 
 
-
+echo "Streams now on twitch";
 
 $length=0;
 $n=0;
-
-$urlarr=array( );
 do
 {
 
@@ -28,31 +26,36 @@ if($length>100){
 }else {
   $temp=$length;
 }
-$j=0;
+
+$name = array();
+
+
+
+
 for ($i=0; $i < $temp ; $i++) {
-  $name= $dataArray['follows'][$i]['channel']['name'];
-
-    # code...
-
-  $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?channel=' .$name .''), true);; // TO DO make this run quicker
-  if ($datastream['streams']!= null) {
-    # code...
-
-    $url=$dataArray['follows'][$i]['channel']['url'];
-
-    $urlarr[$j]= $url;
-    $j=$j+1;
-
-
-
-  }
-
-
-
-
-
-
+  $name[$i]= $dataArray['follows'][$i]['channel']['name'];
 }
+
+
+
+ $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);; // TO DO make this run quicker
+
+for ($i=0; $i < count($datastream['streams']) ; $i++) {
+  # code...
+
+  if ($datastream['streams'][$i]["_id"]!= null) {
+    # code...
+
+      $urlarr[$i+$n]=$datastream['streams'][$i]['channel']['url'];
+
+
+
+
+
+      }
+
+        }
+
 
 
 $length=$length-100;

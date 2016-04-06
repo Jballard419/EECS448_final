@@ -1,12 +1,9 @@
 things to DO
 
 
-1) get stream online quicker/ better
-  a. list of channels
-  b. Token kraken/streams/follows
 
 
-2) redirect to live twitch
+e twitch
 
 
 
