@@ -19,43 +19,43 @@
   </style>
 </head>
 <body>
-  <font face="arial"><h1>Twitch</h1></font>
+  <font face="arial"><center><h1>Twitch</h1></center></font>
     <div class="status">
-      <font face="arial">Status: <input readonly="readonly" size="60" val="Unknown"/></font>
+      <font face="arial"><center>Status: <input readonly="readonly" size="60" val="Unknown"/></center></font>
     </div>
     <div class="authenticate hidden">
-      <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
+      <center><img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" /></center>
     </div>
 
 
 
-    <h2 class="authenticated hidden">Authenticated</h2>
+    <font face="arial"><h2 class="authenticated hidden">Authenticated</h2></font>
     <div class="authenticated hidden">
       <div id="logout">
-        <button>Log Out</button>
+        <font face="arial"><button>Log Out</button></font>
       </div>
 
       <div id="get-name">
-        <button>Get TwitchTV Name</button>
+        <font face="arial"><button>Get TwitchTV Name</button></font>
         <input readonly="readonly" size="50" value="Unknown"/>
       </div>
 
       <div id="get-stream-key">
-        <button>Get TwitchTV Stream Key</button>
+        <font face="arial"><button>Get TwitchTV Stream Key</button></font>
         <input readonly="readonly" size="50" value="Unknown"/>
       </div>
 
       <form action="following.php" id="uservalue" method="post">
-      <br> enter username </br>
+      <br><font face="arial"> Enter a Username </font></br>
       <input type="text" name="user" value="Serpent99" >
       <!-- <input type="text" name="token" value=""> -->
-    </br><br> online </br>
+    </br><br><font face="arial"> Streams Currently Online </font></br>
       <input type='checkbox' name='on' value='yes'>
       <input type= "submit" value="User following">
     </form>
 
     <form action="randfollow.php" id="uservalue" method="post">
-    <br> enter username </br>
+    <br><font face="arial"> Enter Username </font></br>
     <input type="text" name="user" value="Serpent99" >
     <!-- <input type="text" name="token" value=""> -->
 
