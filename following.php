@@ -4,7 +4,6 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $user= $_POST["user"];
 
-
 echo "Streams now on twitch";
 
 $length=0;
@@ -59,7 +58,7 @@ for ($i=0; $i < count($datastream['streams']) ; $i++) {
 
   for ($i=0; $i < $temp ; $i++) {
     $url=$dataArray['follows'][$i]['channel']['url'];
-   echo "<br> <a href=\"$url\">" .$dataArray['follows'][$i]['channel']['name'] ."</a> </br>";
+   echo "<br><font =\"arial\"><a href=\"$url\">" .$dataArray['follows'][$i]['channel']['name'] ."</a></font></br>";
 
  }
 }
@@ -69,9 +68,5 @@ $length=$length-100;
 $n=$n+100;
 
 }while($length> 0);
-
-
-
-
 
  ?>

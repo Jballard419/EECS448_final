@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
 $user= $_POST["user"];
 
 
-echo "Streams now on twitch";
+echo "<font =\"arial\">Streams now on twitch<font>";
 
 $length=0;
 $n=0;
