@@ -1,0 +1,11 @@
+#leftpanel
+{
+	float: left;
+	width: 25%;
+}
+
+#rightpanel
+{
+	float: right;
+	width: 20%;
+}
