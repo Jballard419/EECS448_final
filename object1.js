@@ -18,6 +18,9 @@ if(substring == 'jrlee')
     window.CLIENT_ID = '7uoxuhkie51y95c9xcqfp5shf5zxq6b';
 }
 
+
+// code below came  from http://justintv.github.io/twitch-js-sdk/example.html
+//as a Base to learn how to log in. 
 $(function() {
   // Initialize. If we are already logged in, there is no
   // need for the connect button
@@ -33,6 +36,8 @@ $(function() {
       $('.authenticate').removeClass('hidden');
     }
   });
+
+
 
 
   $('.twitch-connect').click(function() {

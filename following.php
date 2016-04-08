@@ -11,11 +11,11 @@ $n=0;
 do
 {
 
-// $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams/followed'), true);
 
-// echo "<br> hi ". $total. "</br>";
-$dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/users/' .$user .'/follows/channels?limit=100&offset=' . $n. ''), true);
-$total=$dataArray['_total'];
+$dataFollow = json_decode(@file_get_contents('https://api.twitch.tv/kraken/users/' .$user .'/follows/channels?limit=100&offset=' . $n. ''), true);
+ //grabs the object of a users next 100 follows starting at zip_entry_open
+// this is done as the API will only return 100 channels at a time
+$total=$dataFollow['_total'];
 if ($length<=0) {
   $length=$total;
 }
@@ -32,20 +32,25 @@ $name = array();
 if (isset($_POST['on'])) {
 
 for ($i=0; $i < $temp ; $i++) {
-  $name[$i]= $dataArray['follows'][$i]['channel']['name'];
+  $name[$i]= $dataFollow['follows'][$i]['channel']['name']; // builds an array of all the names from the channel object
 }
 
 
 
- $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);; // TO DO make this run quicker
+ $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);;
+ // gets an object containing the streams which channels  are part of $dataFollow object  and they are online
 
-for ($i=0; $i < count($datastream['streams']) ; $i++) {
-  # code...
+ // the Implode funiction converts the name array in to a string with commas i.e. trumpsc,firebat,Amaz,... which is what we need to  to build the correct stream object
 
-  if ($datastream['streams'][$i]["_id"]!= null) {
-    # code...
 
-  $url=$datastream['streams'][$i]['channel']['url'];
+
+for ($i=0; $i < count($datastream['streams']) ; $i++) { // loops to print off all online channels
+
+
+  if ($datastream['streams'][$i]["_id"]!= null) { // 
+
+
+  $url=$datastream['streams'][$i]['channel']['url']; // grabs the url of the stream
 
 
 
@@ -57,8 +62,8 @@ for ($i=0; $i < count($datastream['streams']) ; $i++) {
 
 
   for ($i=0; $i < $temp ; $i++) {
-    $url=$dataArray['follows'][$i]['channel']['url'];
-   echo "<br><font =\"arial\"><a href=\"$url\">" .$dataArray['follows'][$i]['channel']['name'] ."</a></font></br>";
+    $url=$dataFollow['follows'][$i]['channel']['url'];
+   echo "<br><font =\"arial\"><a href=\"$url\">" .$dataFollow['follows'][$i]['channel']['name'] ."</a></font></br>";
 
  }
 }

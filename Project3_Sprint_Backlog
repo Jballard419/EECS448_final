@@ -5,6 +5,6 @@
 -Shows user's followed list
 -Show current streams online from user's followed list
 -Redirect to random stream from user entered username's followed list
-- made both of these run much quicker rate
--Made it so CLIENT_ID is correct for all URLs
+- make both of these run much quicker rate
+-make it so CLIENT_ID is correct for all URLs
 -Basic HTML and CSS styling
