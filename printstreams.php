@@ -15,6 +15,8 @@ echo "<font face=\"arial\" size =\"4\">";
 
 for ($i=0; $i <10 ; $i++) {
   echo "<br>" . $dataArray['top'][$i]['game']['name'] ."</br>";
+  //echo "<img src=" .$dataArray['top'][$i]['game']['logo']['large']. ">";
+  
 }
 echo "</font>"."</center>"."</div>";
  ?>
