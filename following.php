@@ -1,5 +1,10 @@
-<?php
 
+<?php
+/*
+*	author: Jamey Ballard
+*	@filename: following.php
+*	@date: 4/8/2016
+*/
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $user= $_POST["user"];

@@ -1,5 +1,9 @@
 <?php
-
+/*
+*	@author: Jamey Ballard
+*	@date:	4/8/2016
+*	@filename: randfollow.php
+*/
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $user= $_POST["user"];
