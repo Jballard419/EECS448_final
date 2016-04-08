@@ -1,0 +1,7 @@
+-User Authentication
+-Display top 10 games on Twitch
+-Pull information from user account
+  -Username, streamkey
+-Show current streams online from user's followed list
+-Redirect to random stream from user entered username's followed list
+-Basic HTML and CSS styling
