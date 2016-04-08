@@ -4,7 +4,7 @@
 
 var path = window.location.pathname.toString();
 var substring = path.substring(2,7);
-alert(substring);
+//alert(substring);
 if(substring == 'jrlee')
 {
   window.CLIENT_ID = 'tn1skh051b84wkb0w2ny2ssjdnf0vlv'; // set to http://localhost.
