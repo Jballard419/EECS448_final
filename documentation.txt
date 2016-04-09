@@ -1,0 +1,45 @@
++++++++++++++++++++++++++++++++++
+PHP
++++++++++++++++++++++++++++++++++
+=================================
+following.php
+=================================
+dataFollow: grabs the object of a users next 100 follows starting at $n 
+
+datastream: gets an object containing the streams which channels  are part of $dataFollow object  and they are online
+
+name: array need to get the array of streams
+
+
+Implode():
+	preconditions: an array is passed in
+	postconditions: the array is converted to a string seperated by commas
+	return: The new string
+	
+=================================
+printstreams.php
+=================================
+
+dataArray: grabs the games object top from the API
+
+
+=================================
+randfollow.php
+=================================
+dataFollows: grabs the object of a users next 100 follows starting at $n
+
+name: an array need to get the array of streams
+
+datastream: gets an object containing the streams which channels  are part of $dataFollow object  and they are online
+
+
++++++++++++++++++++++++++++++++++
+Javascript
++++++++++++++++++++++++++++++++++
+
+=================================
+object1.js
+=================================
+code came from http://justintv.github.io/twitch-js-sdk/example.html
+
+
