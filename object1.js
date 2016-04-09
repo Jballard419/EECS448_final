@@ -20,7 +20,7 @@ if(substring == 'jrlee')
 }
 
 // code below came  from http://justintv.github.io/twitch-js-sdk/example.html
-//as a Base to learn how to log in.
+//as a Base to learn how to log in. and use the API in general 
 
 $(function() {
   // Initialize. If we are already logged in, there is no

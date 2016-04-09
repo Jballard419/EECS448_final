@@ -8,53 +8,42 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $user= $_POST["user"];
 
+//Hey Justin if you could fix the formatting Yeah that be great
+
 
 echo "<font =\"arial\">Streams now on twitch<font>";
 
-$length=0;
-$n=0;
+
+$n=0; //offset variable
 do
 {
 
 // $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams/followed'), true);
 
 // echo "<br> hi ". $total. "</br>";
-$dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/users/' .$user .'/follows/channels?limit=100&offset=' . $n. ''), true);
-$total=$dataArray['_total'];
-if ($length<=0) {
-  $length=$total;
+$dataFollows = json_decode(@file_get_contents('https://api.twitch.tv/kraken/users/' .$user .'/follows/channels?limit=100&offset=' . $n. ''), true);
+//grabs the object of a users next 100 follows starting at $n
+// this is done as the API will only return 100 channels at a time
+
+$total=$dataFollows['_total'];
+
+$name = array(); //an array need to get the array of streams
+
+for ($i=0; $i < count($dataFollows['follows']) ; $i++) {
+  $name[$i]= $dataFollows['follows'][$i]['channel']['name']; // builds an array of all the names from the channel object
 }
+ $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);
+ // gets an object containing the streams which channels  are part of $dataFollow object  and they are online
 
-if($length>100){
-  $temp= 100;
-}else {
-  $temp=$length;
-}
+ // the Implode funiction converts the name array in to a string with commas i.e. trumpsc,firebat,Amaz,... which is what we need to  to build the correct stream object
 
-$name = array();
+for ($i=0; $i < count($datastream['streams']) ; $i++) { // a classic for loop to check elements of an array
 
 
+  if ($datastream['streams'][$i]["_id"]!= null) { // Double check that the stream are online
 
 
-for ($i=0; $i < $temp ; $i++) {
-  $name[$i]= $dataArray['follows'][$i]['channel']['name'];
-}
-
-
-
- $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);; // TO DO make this run quicker
-
-for ($i=0; $i < count($datastream['streams']) ; $i++) {
-  # code...
-
-  if ($datastream['streams'][$i]["_id"]!= null) {
-    # code...
-
-      $urlarr[$i+$n]=$datastream['streams'][$i]['channel']['url'];
-
-
-
-
+      $urlarr[$i+$n]=$datastream['streams'][$i]['channel']['url']; // and array of online urls
 
       }
 
@@ -62,17 +51,17 @@ for ($i=0; $i < count($datastream['streams']) ; $i++) {
 
 
 
-$length=$length-100;
-$n=$n+100;
 
-}while($length> 0);
+$n=$n+100; // offset
 
-$rand_keys = array_rand($urlarr);
+}while(($total -$n)> 0); //This is here to allow it to run for user with more then onehundred folowers
 
-$url= $urlarr[$rand_keys];
+$rand_index = array_rand($urlarr); // gets a random index of The urlarr
 
-header('Location: '.$url);
-die();
+$url= $urlarr[$rand_index]; // get the url at the Random index
+
+header('Location: '.$url); //redircet to our random Url
+die(); // ends the PHP after the redirect so the browser makes it to the url
 
 
  ?>
