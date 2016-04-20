@@ -9,9 +9,10 @@
 
 -get a random stream based on a top ten game
 	-place min and max filter in a method
-		-increase speed of method //binary search	 
+		-increase speed of method //binary search
 	- add option to search for a game
 	- language filter
+	-get language filter to work 
 	-  Make the Form look pretty  / seemless
 
 

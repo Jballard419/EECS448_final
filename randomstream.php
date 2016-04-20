@@ -32,6 +32,16 @@ for ($i=0; $i <50 ; $i++) {
 
 
 echo "</select> <br>";
+  echo "language: <select name='language'> ";
+  echo "<option value=en> english </option>";
+  //echo "<option value=ru> russian </option>";
+  echo "<option value=en> or english </option>";
+//  echo "<option value=ru> russian </option>";
+
+
+echo "</select>";
+
+
 echo " min views<input type='number'  name='minviews'  min='0' checked>" ;
 echo "<br> max views<input type='number'  name='maxviews'  min='0' checked> </br>" ;
 

@@ -9,10 +9,14 @@ $game=urlencode($game);
 $minviews=$_POST["minviews"];
 $maxviews=$_POST["maxviews"];
 $game=trim($game, "+.");
+$language=$_POST["language"];
 
 
 
 
+
+
+//echo "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=100&game=" . $game ."";
 
 function find_view($max_or_min, $game) {
   # code...
@@ -78,7 +82,7 @@ $minindex = find_view($maxviews, $game) ;
 if(ctype_digit($minviews)||$minviews<1){
   $maxindex = find_view($minviews, $game) -1;
 }else {
-  $random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&game=' . $game .''), true);;
+  $random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&game=' . $game ), true);;
   $maxindex= $streamArray["_total"]-1;
 
 }
@@ -98,7 +102,7 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
 
-$random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&offset='. $rand_num . '&game=' . $game .''), true);;
+$random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&offset='. $rand_num . '&game=' . $game ), true);;
 
 
 $url=$random_stream['streams'][0]['channel']['url'];
