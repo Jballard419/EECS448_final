@@ -16,7 +16,7 @@ $language=$_POST["language"];
 
 
 
-//echo "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=100&game=" . $game ."";
+
 
 function find_view($max_or_min, $game) {
   # code...
@@ -25,7 +25,16 @@ function find_view($max_or_min, $game) {
 
 
   do{
-    $streamArray= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&offset='. $n . '&limit=100&game=' . $game .''), true);;
+
+    $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $GLOBALS['language']  . "&offset=" . $n . "&limit=100&game=" . $game ."";
+
+
+
+    $streamArray= json_decode(@file_get_contents($unleash), true);;
+
+
+
+
     //
     //
     //
@@ -82,8 +91,15 @@ $minindex = find_view($maxviews, $game) ;
 if(ctype_digit($minviews)||$minviews<1){
   $maxindex = find_view($minviews, $game) -1;
 }else {
-  $random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&game=' . $game ), true);;
-  $maxindex= $streamArray["_total"]-1;
+
+  $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=100 & game=" . $game ."";
+
+
+
+  $random_stream= json_decode(@file_get_contents($unleash), true);;
+
+
+  $maxindex= $random_stream["_total"]-1;
 
 }
 if ($maxindex <0||$minindex> $maxindex) {
@@ -100,14 +116,17 @@ if ($maxindex <0||$minindex> $maxindex) {
   $rand_num = rand($minindex, $maxindex);
 
 
+//$rand_num=7;
+$unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&offset=" . $rand_num . "&limit=100&game=" . $game ."";
 
 
-$random_stream= json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&language=en&offset='. $rand_num . '&game=' . $game ), true);;
+
+$random_stream= json_decode(@file_get_contents($unleash), true);;
 
 
 $url=$random_stream['streams'][0]['channel']['url'];
 
-//echo $minviews;
+
 
    header('Location: '.$url); //redircet to our random Url
   die();

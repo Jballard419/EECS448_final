@@ -34,7 +34,7 @@ for ($i=0; $i <50 ; $i++) {
 echo "</select> <br>";
   echo "language: <select name='language'> ";
   echo "<option value=en> english </option>";
-  //echo "<option value=ru> russian </option>";
+  echo "<option value=ru> russian </option>";
   echo "<option value=en> or english </option>";
 //  echo "<option value=ru> russian </option>";
 
