@@ -16,7 +16,7 @@ echo "<form action= ' random_backend.php' method='post'>";
 echo "choose a game";
 
 echo "<select name='game'>";
-
+echo " <option value='' > Give me anything </option>";
 
 for ($i=0; $i <50 ; $i++) {
 
@@ -35,7 +35,7 @@ echo "</select> <br>";
   echo "language: <select name='language'> ";
   echo "<option value=en> english </option>";
   echo "<option value=ru> russian </option>";
-  echo "<option value=en> or english </option>";
+  echo "<option value=> or anything </option>";
 //  echo "<option value=ru> russian </option>";
 
 

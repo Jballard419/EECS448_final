@@ -12,7 +12,14 @@ $game=trim($game, "+.");
 $language=$_POST["language"];
 
 
+$unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=1&game=" . $game ."";
 
+
+
+$random_stream= json_decode(@file_get_contents($unleash), true);;
+
+
+$maxindex= $random_stream["_total"]-1;
 
 
 
@@ -88,20 +95,13 @@ $minindex = find_view($maxviews, $game) ;
 } else {
   $minindex= 0;
 }
-if(ctype_digit($minviews)||$minviews<1){
+if(ctype_digit($minviews)&&$minviews>0){
   $maxindex = find_view($minviews, $game) -1;
-}else {
-
-  $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=100 & game=" . $game ."";
-
-
-
-  $random_stream= json_decode(@file_get_contents($unleash), true);;
-
-
-  $maxindex= $random_stream["_total"]-1;
 
 }
+
+
+
 if ($maxindex <0||$minindex> $maxindex) {
   echo $minviews . "<br>". $maxviews;
   echo "no streams with selected value"; // get this to just show on web page
@@ -111,9 +111,9 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
 
+echo $minindex;
 
-
-  $rand_num = rand($minindex, $maxindex);
+  $rand_num = mt_rand($minindex, $maxindex);
 
 
 //$rand_num=7;
