@@ -33,10 +33,18 @@ for ($i=0; $i <50 ; $i++) {
 
 echo "</select> <br>";
   echo "language: <select name='language'> ";
-  echo "<option value=en> english </option>";
-  echo "<option value=ru> russian </option>";
+  echo "<option value=en> English </option>";
+  echo "<option value=ru> Russian </option>";
+  echo "<option value=fr> French </option>";
+  echo "<option value=de> German </option>";
+  echo "<option value=es> Spanish </option>";
+  echo "<option value=pt> Portuguese </option>";
+  echo "<option value=zh> Chinese </option>";
+  echo "<option value=cs> Czech </option>";
+  echo "<option value=tr> Turkish </option>";
+  echo "<option value=ko> Korean </option>";
   echo "<option value=> or anything </option>";
-//  echo "<option value=ru> russian </option>";
+
 
 
 echo "</select>";

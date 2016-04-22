@@ -35,17 +35,8 @@ function find_view($max_or_min, $game) {
 
     $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $GLOBALS['language']  . "&offset=" . $n . "&limit=100&game=" . $game ."";
 
-
-
     $streamArray= json_decode(@file_get_contents($unleash), true);;
 
-
-
-
-    //
-    //
-    //
-    //
     $total = $streamArray["_total"];
 
     $q=count($streamArray["streams"])-1;
@@ -54,8 +45,6 @@ function find_view($max_or_min, $game) {
     if($streamArray["streams"][$q]["viewers"]<$max_or_min){
 
     for ($i=0; $i <$q ; $i++) {
-
-
 
          if($streamArray["streams"][$i]["viewers"]<$max_or_min)
          {
@@ -74,11 +63,7 @@ function find_view($max_or_min, $game) {
 
     }
 
-
-
     $n=$n+100;
-
-
 
     }while (($total-$n)>0);
 
@@ -86,15 +71,12 @@ return $total;
 
 }
 
-
-
-
-
 if(ctype_digit($maxviews)){
-$minindex = find_view($maxviews, $game) ;
-} else {
-  $minindex= 0;
-}
+  $minindex = find_view($maxviews, $game) ;
+  }
+else {
+    $minindex= 0;
+  }
 if(ctype_digit($minviews)&&$minviews>0){
   $maxindex = find_view($minviews, $game) -1;
 
@@ -111,20 +93,19 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
 
-echo $minindex;
+
 
   $rand_num = mt_rand($minindex, $maxindex);
 
 
-//$rand_num=7;
-$unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&offset=" . $rand_num . "&limit=100&game=" . $game ."";
+  $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&offset=" . $rand_num . "&limit=100&game=" . $game ."";
 
 
 
-$random_stream= json_decode(@file_get_contents($unleash), true);;
+  $random_stream= json_decode(@file_get_contents($unleash), true);;
 
 
-$url=$random_stream['streams'][0]['channel']['url'];
+  $url=$random_stream['streams'][0]['channel']['url'];
 
 
 
