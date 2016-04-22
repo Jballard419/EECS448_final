@@ -8,7 +8,7 @@ $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/games/
 
 
 
-echo "<form action= ' random_backend.php' method='post'>";
+echo "<form action= ' random_backend.php' method='post' id='rand_stream'>";
 
 
 
@@ -32,7 +32,15 @@ for ($i=0; $i <50 ; $i++) {
 
 
 echo "</select> <br>";
-  echo "language: <select name='language'> ";
+
+
+
+echo "<div id='Filters'>";
+
+  echo "Language";
+  echo " <select name='language' id='language'> ";
+
+  echo "<option value=>   </option>";
   echo "<option value=en> English </option>";
   echo "<option value=ru> Russian </option>";
   echo "<option value=fr> French </option>";
@@ -43,19 +51,26 @@ echo "</select> <br>";
   echo "<option value=cs> Czech </option>";
   echo "<option value=tr> Turkish </option>";
   echo "<option value=ko> Korean </option>";
-  echo "<option value=> or anything </option>";
+
 
 
 
 echo "</select>";
 
 
+
+
 echo " min views<input type='number'  name='minviews'  min='0' checked>" ;
-echo "<br> max views<input type='number'  name='maxviews'  min='0' checked> </br>" ;
+echo "<br> max views<input type='number'  name='maxviews'  min='0' checked> </br> </div>" ;
 
-echo "<br> <input type= 'submit' value='Find random online stream'> </br>";
 
-echo "</form>";
+echo "<br> <input type= 'submit' value='Find random online stream'> ";
+
+
+
+echo "</form> ";
+echo "<button onclick='filters()'>ADD filters</button>";
+
 
 
 ?>
