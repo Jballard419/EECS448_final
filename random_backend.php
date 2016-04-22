@@ -1,5 +1,8 @@
 <?php
 
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -33,7 +36,7 @@ function find_view($max_or_min, $game) {
 
   do{
 
-    $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $GLOBALS['language']  . "&offset=" . $n . "&limit=100&game=" . $game ."";
+    $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $GLOBALS['language']  . "&offset=" . $n . "&limit=100&game=" . $game .""; // builds the call we are going to make to the API
 
     $streamArray= json_decode(@file_get_contents($unleash), true);;
 
@@ -105,12 +108,14 @@ if ($maxindex <0||$minindex> $maxindex) {
   $random_stream= json_decode(@file_get_contents($unleash), true);;
 
 
-  $url=$random_stream['streams'][0]['channel']['url'];
+  $name=$random_stream['streams'][0]['channel']['name'];
+
+$url =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
 
 
 
-   header('Location: '.$url); //redircet to our random Url
-  die();
+  header('Location: '.$url); //redircet to our random Url
+ die();
 
 
 
