@@ -10,7 +10,7 @@ function createTabJames()
 
 function createTabJustin() 
 {
-	chrome.tabs.create({ url:"https://www.google.com/"});
+	chrome.tabs.create({ url:"http://people.eecs.ku.edu/~jrlee/EECS448/EECS448_final/index.html"});
 }
 
 document.addEventListener('DOMContentLoaded', function () 
