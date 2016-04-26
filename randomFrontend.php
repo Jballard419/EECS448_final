@@ -8,7 +8,7 @@ ini_set("display_errors", 1);
 $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/games/top?limit=50'), true);
 
 
-
+echo $_GET["channel_name"];
 
 
 echo "<form action= ' random_backend.php' method='post' id='rand_stream'>";

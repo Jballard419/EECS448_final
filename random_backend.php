@@ -1,11 +1,13 @@
 <?php
 
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
 
 
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 $game = $_POST["game"];
 $game=urlencode($game);
@@ -47,17 +49,7 @@ function find_view($max_or_min, $game) {
 
     if($streamArray["streams"][$q]["viewers"]<$max_or_min){
 
-      $j=$q
-      while($j>0)
-      {
-
-
-
-
-
-
-
-        }
+    
 
     for ($i=0; $i <$q ; $i++) {
 
