@@ -1,6 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+// error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+
+if(isset($_GET["channel_name"])){ 
+
+
+
 $cname = $_GET["channel_name"];
 
 echo "<div align='left'>
@@ -21,6 +26,8 @@ echo "<div align='left'>
      </iframe>
      </iframe>
 
-+</div>";
+</div>";
+
+}
 
 ?>
