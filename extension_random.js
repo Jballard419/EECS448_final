@@ -11,6 +11,6 @@ gamelist = $.getJSON('https://api.twitch.tv/kraken/games/top?limit=50', function
 			var option = document.createElement('option');
        			option.text = gametoadd;
 			option.value = gametoadd;
-       			gameslist.add(option, 0);
+       			gameslist.add(option, i+1);
 		}
 	});
