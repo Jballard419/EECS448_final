@@ -47,6 +47,18 @@ function find_view($max_or_min, $game) {
 
     if($streamArray["streams"][$q]["viewers"]<$max_or_min){
 
+      $j=$q
+      while($j>0)
+      {
+
+
+
+
+
+
+
+        }
+
     for ($i=0; $i <$q ; $i++) {
 
          if($streamArray["streams"][$i]["viewers"]<$max_or_min)
