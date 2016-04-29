@@ -49,7 +49,7 @@ function find_view($max_or_min, $game) {
 
     if($streamArray["streams"][$q]["viewers"]<$max_or_min){
 
-    
+
 
     for ($i=0; $i <$q ; $i++) {
 
@@ -113,12 +113,13 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
   $name=$random_stream['streams'][0]['channel']['name'];
+  $url_twitch=$random_stream['streams'][0]['channel']['url'];
 
-$url =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
+$url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
 
 
 
-  header('Location: '.$url); //redircet to our random Url
+  header('Location: '.$url_US); //redircet to our random Url
  die();
 
 
