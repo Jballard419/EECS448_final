@@ -14,11 +14,4 @@
 		"https://ajax.googleapis.com/",
 		"tabs"
 	]
-	"content_scripts": [
-		{
-      			"js": ["jquery-2.2.3.min.js", "extension_random.js"],
-    			"matches": [ "http://*/*", "https://*/*"]
-    		}
-  	]
-
 }
