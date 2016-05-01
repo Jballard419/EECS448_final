@@ -4,7 +4,7 @@ function filters()
 
     if (document.getElementById('Filters').style.display != "none") {
         document.getElementById('Filters').style.display = "none";
-        
+
         document.getElementById('Add_Filters').style.display="inline";
 
     }else {

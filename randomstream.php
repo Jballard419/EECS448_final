@@ -2,7 +2,7 @@
 // error_reporting(E_ALL);
 // ini_set("display_errors", 1);
 
-if(isset($_GET["channel_name"])){ 
+if(isset($_GET["channel_name"])){
 
 
 
