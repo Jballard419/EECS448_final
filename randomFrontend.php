@@ -64,16 +64,16 @@ echo "</select>";
 
 
 echo " min views<input type='number'  name='minviews'  min='0' checked>" ;
-echo "<br> max views<input type='number'  name='maxviews'  min='0' checked> </br> </div>" ;
+echo " max views<input type='number'  name='maxviews'  min='0' checked> </br> </div>" ;
 
 
-echo "<br> <input type= 'submit' value='Find random online stream'> ";
+echo " <input type= 'submit' value='Find random online stream'> ";
 
 
 
 echo "</form> ";
-echo "<button onclick='filters()'>ADD filters</button>";
-
+echo "<button id=Add_Filters onclick='filters()'>Add Filters</button>";
+echo "<button id=Hide_Filters onclick='filters()'> Hide Filters</button>";
 
 
 ?>

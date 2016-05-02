@@ -1,20 +1,20 @@
 <?php
 
 
-
-
-
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+// $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-$game = $_POST["game"];
+$game = $_GET["game"];
 $game=urlencode($game);
-$minviews=$_POST["minviews"];
-$maxviews=$_POST["maxviews"];
+$minviews=$_GET["minviews"];
+$maxviews=$_GET["maxviews"];
 $game=trim($game, "+.");
 $language=$_POST["language"];
+
+
+echo $minviews;
 
 
 $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=1&game=" . $game ."";
@@ -119,10 +119,7 @@ $url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url
 
 
 
-  header('Location: '.$url_US); //redircet to our random Url
+  header('Location: '.$url_twitch); //redircet to our random Url
  die();
-
-
-
 
  ?>
