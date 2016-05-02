@@ -100,10 +100,34 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
 
+if(!isset($_POST['dim'])){
+  echo "string";
 
+$rand_num = mt_rand($minindex, $maxindex);
+
+$unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&offset=" . $rand_num . "&limit=100&game=" . $game ."";
+
+
+
+$random_stream= json_decode(@file_get_contents($unleash), true);;
+
+$name=$random_stream['streams'][0]['channel']['name'];
+$url_twitch=$random_stream['streams'][0]['channel']['url'];
+
+$url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
+
+
+header('Location: '.$url_US); //redircet to our random Url
+die();
+
+}
+
+
+$stream_name = array();
+
+for ($i=0; $i <4 ; $i++) {
 
   $rand_num = mt_rand($minindex, $maxindex);
-
 
   $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&offset=" . $rand_num . "&limit=100&game=" . $game ."";
 
@@ -111,16 +135,16 @@ if ($maxindex <0||$minindex> $maxindex) {
 
   $random_stream= json_decode(@file_get_contents($unleash), true);;
 
+  $stream_name[$i]=$random_stream['streams'][0]['channel']['name'];
+}
+$url_US =str_replace("random_backend.php","threes.js-master/examples/css3d_youtube.html?channel_name=".implode(",",$stream_name) ,$url);
+header('Location: '.$url_US); //redircet to our random Url
+die();
 
-  $name=$random_stream['streams'][0]['channel']['name'];
-  $url_twitch=$random_stream['streams'][0]['channel']['url'];
-
-$url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
 
 
 
-  header('Location: '.$url_US); //redircet to our random Url
- die();
+
 
 
 
