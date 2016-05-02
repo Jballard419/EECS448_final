@@ -60,7 +60,7 @@ echo "<div id='Filters'>";
 
 echo "</select>";
 
-
+echo "3d? <input type='checkbox' name='dim' value='true' />    " ;
 
 
 echo " min views<input type='number'  name='minviews'  min='0' checked>" ;

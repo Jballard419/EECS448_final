@@ -9,7 +9,7 @@ ini_set("display_errors", 1);
 $user= $_POST["user"];
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-//Hey Justin if you could fix the formatting Yeah that be great
+
 
 
 echo "<font =\"arial\">Streams now on twitch<font>";
