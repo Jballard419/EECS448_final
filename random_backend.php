@@ -137,7 +137,7 @@ for ($i=0; $i <4 ; $i++) {
 
   $stream_name[$i]=$random_stream['streams'][0]['channel']['name'];
 }
-$url_US =str_replace("random_backend.php","threes.js-master/examples/css3d_youtube.html?channel_name=".implode(",",$stream_name) ,$url);
+$url_US =str_replace("random_backend.php","three.js-master/examples/css3d_youtube.html?".implode(",",$stream_name) ,$url);
 header('Location: '.$url_US); //redircet to our random Url
 die();
 

@@ -31,7 +31,28 @@
 
 		<script>
 
+			var currentLocation = window.location; //JRL
+			var streamArr = [];
+			var c1,c2,c3,c4;
+
 			var camera, scene, renderer;
+
+				var urlStr = currentLocation.toString();
+
+				var pos = urlStr.indexOf("?");
+
+				var channStr = urlStr.slice(pos+1);
+
+				var channArr = channStr.split(",");
+
+				c1 = channArr[0];
+				c2 = channArr[1];
+				c3 = channArr[2];
+				c4 = channArr[3];
+
+				console.log(c1, c2, c3, c4);
+
+
 
 			var Element = function ( id, x, y, z, ry ) {
 
@@ -74,10 +95,10 @@
 				container.appendChild( renderer.domElement );
 
 				var group = new THREE.Group();
-				group.add( new Element( 'hezzzo98', 0, 0, 240, 0 ) );
-				group.add( new Element( 'mancoiv', 240, 0, 0, Math.PI / 2 ) );
-				group.add( new Element( 'eisratv', 0, 0, - 240, Math.PI ) );
-				group.add( new Element( 'hunterpoynor', - 240, 0, 0, - Math.PI / 2 ) );
+				group.add( new Element( c1, 0, 0, 240, 0 ) );
+				group.add( new Element( c2, 240, 0, 0, Math.PI / 2 ) );
+				group.add( new Element( c3, 0, 0, - 240, Math.PI ) );
+				group.add( new Element( c4, - 240, 0, 0, - Math.PI / 2 ) );
 				scene.add( group );
 
 				controls = new THREE.TrackballControls( camera );
