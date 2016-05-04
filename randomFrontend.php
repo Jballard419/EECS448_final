@@ -40,7 +40,7 @@ echo " <select name='language' id='language'> ";
   echo "<option value=ko> Korean </option>";
 
 echo "</select>";
-echo "3d? <input type='checkbox' name='dim' value='true' />    " ;
+echo "3d? <input type='checkbox' name='dim' id='dim' value='true' />    " ;
 echo " min views<input type='number'  name='minviews'  min='0' checked>" ;
 echo " max views<input type='number'  name='maxviews'  min='0' checked> </br> </div>" ;
 

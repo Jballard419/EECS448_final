@@ -2,14 +2,15 @@ function filters()
 {
 
 
-    if (document.getElementById('Filters').style.display != "none") {
+    if (document.getElementById('Filters').style.display != "none" && document.getElementById('Filters').style.display != "") {
         document.getElementById('Filters').style.display = "none";
-
+        document.getElementById('Hide_Filters').style.display="none";
         document.getElementById('Add_Filters').style.display="inline";
 
     }else {
         document.getElementById('Filters').style.display = "block";
         document.getElementById('Add_Filters').style.display="none";
+        document.getElementById('Hide_Filters').style.display="inline";
     }
 
 
