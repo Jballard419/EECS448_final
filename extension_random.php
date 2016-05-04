@@ -14,7 +14,7 @@ $game=trim($game, "+.");
 $language=$_POST["language"];
 
 
-echo $minviews;
+
 
 
 $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=1&game=" . $game ."";
