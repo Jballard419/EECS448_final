@@ -1,0 +1,7 @@
+Webpage:
+
+
+Extension:
+
+1. Upon button click, the "random stream" algorithm has poor performance time
+2. Occasionally when opening the extension popup, the height of the panel is sometimes far larger than the CSS tells it to be
