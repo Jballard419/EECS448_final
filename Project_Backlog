@@ -1,0 +1,37 @@
+-User authentication
+-Pull current top ten games on Twitch and display their names
+-Display a list of games on twitch
+-Pull list of streams the user is following, and display which ones are currently online
+-Find a random online stream based on user's followed streamers
+
+
+
+
+-get a random stream based on a top ten game
+	-place min and max filter in a method
+		-increase speed of method //binary search
+	- add option to search for a game
+	- language filter
+	-get language filter to work
+	-  Make the Form look pretty  / seemless
+
+
+
+-Embed a stream onto page, as well as the stream chat
+	-Embedded stream could be pulled from user's followers, or be randomized to show any stream that is currently on Twitch
+	 or user searchable
+
+-Possibly embed multiple streams
+-Make the page look nice
+	-Custom buttons if possible
+	-Not just a single color background
+		-Possible purple with white text on headings, white background and black text for bodies
+		-Black bar with buttons on left side for all buttons interactions, white text
+
+-Browser extension to click to redirect to random stream
+	-Option for randomizing within a game, within followed streams, etc.
+
+
+
+-Random any lanague
+-random any game

@@ -3,20 +3,15 @@
 		<script src="jquery-2.2.3.min.js" type="text/javascript"></script>
 		<script src="extension_redirect.js"></script>
 		<script src="extension_random.js"></script>
-		<style>
-			body
-			{
-				width: 250px;
-				height: 325px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="extension_styling.css">
+
 	</head>
 
 	<body>
-		<button id="BrandonButton">Go to Brandon's project page</button> <br>
-		<button id="JamesButton">Go to Jamie's project page</button> <br>
-		<button id="JustinButton">Go to Justin's project page</button> <br>
-		<br>
+		<button class="pagebutton" id="BrandonButton">Brandon's Page</button>
+		<button class="pagebutton" id="JamesButton">Jamie's Page</button>
+		<button class="pagebutton" id="JustinButton">Justin's Page</button> <br><br>
+		<br><br>
 		<b>Filter parameters for a random stream:</b> <br> <br>
 		Game:
 		<select id = 'gameslist' name = 'game'>
@@ -43,7 +38,7 @@
 		Maximum view Count:<br>
 		<input id="maxcount" type="text" name="maxview"><br><br>
 
-		<button id="randomstream"> Go to random stream!</button>
+		<button class="randbutton" id="randomstream"> Go to random stream!</button>
 		
 	</body>
 </html>
