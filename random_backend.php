@@ -1,7 +1,7 @@
 <?php
 /*
 *	@author: Jamey Ballard
-*	@date:	4/8/2016
+*	@date:	 2016/05/6
 *	@filename: random_backend.php
 *	@about called from HTML  and gets a random stream from people that the entred username is following
 */

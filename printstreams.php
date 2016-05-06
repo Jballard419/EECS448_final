@@ -1,7 +1,7 @@
 <?php
 /*
 *	@author: Jamey Ballard
-*	@date: 4/8/2016
+*	@date:  2016/05/6
 *	@filename: printstreams.php
 *	@about gets game object fomr the Twitch API, writes various information to the main HTML page, builds URLs
 */

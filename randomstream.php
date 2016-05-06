@@ -1,7 +1,7 @@
 <?php
 /*
 *	@author: Jamey Ballard
-*	@date:	4/8/2016
+*	@date: 2016/05/6
 *	@filename: randomstream.php
 *	@about prints to the main HTML twitch page.  It prints the information to display the stream on the main page
 */

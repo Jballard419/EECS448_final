@@ -1,6 +1,6 @@
 /*
  * 	@author: Jamey Ballard, Justin Lee
- * 	@date:	4/8/2016
+ * 	@date:	 2016/05/6
  * 	@filename: object1.js
  */
 

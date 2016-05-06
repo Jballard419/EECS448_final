@@ -1,5 +1,5 @@
 Webpage:
-
+1. Currently, when the 3D twitch object is loaded, all the volumes are set to default.  Ideally, we want 3 of them set to mute and one set to around 25%
 
 Extension:
 

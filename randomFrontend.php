@@ -1,7 +1,7 @@
 <?php
 /*
 *	@author: Jamey Ballard
-*	@date:	4/8/2016
+*	@date:	 2016/05/6
 *	@filename: randomFrontend.php
 *	@about prints to the main HTML twitch page.  It adds options for the filters and can call random_backend.php
 */
