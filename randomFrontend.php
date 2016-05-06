@@ -1,25 +1,24 @@
 <?php
-
-
+/*
+*	@author: Jamey Ballard
+*	@date:	4/8/2016
+*	@filename: randomFrontend.php
+*	@about prints to the main HTML twitch page.  It adds options for the filters and can call random_backend.php
+*/
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/games/top?limit=50'), true);
-
-
-
-
-
 echo "<form action= ' random_backend.php' method='post' id='rand_stream'>";
-
 echo "choose a game";
 echo "<select name='game'>";
 echo " <option value='' > Give me anything </option>";
 
-for ($i=0; $i <50 ; $i++) {
+for ($i=0; $i <50 ; $i++)
+{
   $game_name= $dataArray['top'][$i]['game']['name'];
-   echo " <option value=' . $game_name .' >" . $dataArray['top'][$i]['game']['name'] . "</option>";
+  echo " <option value=' . $game_name .' >" . $dataArray['top'][$i]['game']['name'] . "</option>";
 }
 
 echo "</select> <br>";
@@ -48,6 +47,4 @@ echo " <input type= 'submit' value='Find random online stream'> ";
 echo "</form> ";
 echo "<button id=Add_Filters onclick='filters()'>Add Filters</button>";
 echo "<button id=Hide_Filters onclick='filters()'> Hide Filters</button>";
-
-
 ?>
