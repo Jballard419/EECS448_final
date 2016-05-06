@@ -17,7 +17,10 @@
   <script src="button.js"> </script>
 
 <?php include 'printstreams.php' ?>
+<?php include 'randomstream.php'; ?>
+
 <?php include 'randomFrontend.php'; ?>
+
 
 
  <style type="text/css">
@@ -29,6 +32,7 @@
 <body bgcolor="#6441a5" text="white"> <!-- get this in a Css file  -->
 <div id="rightpanel">
   <font face="arial"><center><h1>Twitch</h1></center></font>
+
 
     <div class="authenticate hidden">
       <center><img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" /></center>
@@ -61,12 +65,12 @@
     </form>
 
     <form action="randfollow.php" id="uservalue" method="post">
-    <br><font face="arial"> Enter Username </font></br>
-    <input type="text" name="user" value="Serpent99" >
-    <!-- <input type="text" name="token" value=""> -->
+      <br><font face="arial"> Enter Username </font></br>
+      <input type="text" name="user" value="Serpent99" >
+      <!-- <input type="text" name="token" value=""> -->
 
-    <input type= "submit" value="Find random online stream">
-  </form>
+      <input type= "submit" value="Find random online stream">
+    </form>
 
 
 
