@@ -18,9 +18,7 @@ $n=0; //offset variable
 do
 {
 
-// $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams/followed'), true);
 
-// echo "<br> hi ". $total. "</br>";
 $dataFollows = json_decode(@file_get_contents('https://api.twitch.tv/kraken/users/' .$user .'/follows/channels?limit=100&offset=' . $n. ''), true);
 //grabs the object of a users next 100 follows starting at $n
 // this is done as the API will only return 100 channels at a time

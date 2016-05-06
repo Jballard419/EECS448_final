@@ -7,7 +7,15 @@
 
 
 
--get a random stream based on a top ten game 
+-get a random stream based on a top ten game
+	-place min and max filter in a method
+		-increase speed of method //binary search
+	- add option to search for a game
+	- language filter
+	-get language filter to work
+	-  Make the Form look pretty  / seemless
+
+
 
 -Embed a stream onto page, as well as the stream chat
 	-Embedded stream could be pulled from user's followers, or be randomized to show any stream that is currently on Twitch
@@ -22,3 +30,8 @@
 
 -Browser extension to click to redirect to random stream
 	-Option for randomizing within a game, within followed streams, etc.
+
+
+
+-Random any lanague
+-random any game
