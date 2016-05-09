@@ -1,0 +1,9 @@
+Webpage:
+1. Currently, when the 3D twitch object is loaded, all the volumes are set to default.  Ideally, we want 3 of them set to mute and one set to around 25%
+
+2. The 3D twitch object will not have the correct dimensions sometimes depending on the browser/machine the user has. Known issues: Windows lab machines: chrome, and Fedora Lab machines: firefox.
+
+Extension:
+
+1. Upon button click, the "random stream" algorithm has poor performance time
+2. Occasionally when opening the extension popup, the height of the panel is sometimes far larger than the CSS tells it to be

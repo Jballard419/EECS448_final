@@ -30,10 +30,10 @@
 		<div id="blocker"></div>
 
 		<script>
-
-			var currentLocation = window.location; //JRL
+		 //The following variables are  for storing the strings of the channel names Edited by: Justin Lee
+			var currentLocation = window.location; 
 			var streamArr = [];
-			var c1,c2,c3,c4;
+			var c1,c2,c3,c4; //
 
 			var camera, scene, renderer;
 
@@ -49,11 +49,12 @@
 				c2 = channArr[1];
 				c3 = channArr[2];
 				c4 = channArr[3];
+				//End edit
 
 				console.log(c1, c2, c3, c4);
 
 
-
+				//Edited this function to take the id as a parameter, and to build a twitch iframe instead of youtube. Edited by: Justin Lee
 			var Element = function ( id, x, y, z, ry ) {
 
 				var div = document.createElement( 'div' );
@@ -79,6 +80,7 @@
 			init();
 			animate();
 
+			//Edited this function to build new Elements in twitch id's instead of youtube channels. Edited by: Justin Lee
 			function init() {
 
 				var container = document.getElementById( 'container' );
