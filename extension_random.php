@@ -115,7 +115,7 @@ if ($maxindex <0||$minindex> $maxindex) {
   $name=$random_stream['streams'][0]['channel']['name'];
   $url_twitch=$random_stream['streams'][0]['channel']['url'];
 
-$url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
+
 
 
 

@@ -31,7 +31,7 @@ $name = array(); //an array need to get the array of streams
 for ($i=0; $i < count($dataFollows['follows']) ; $i++) {
   $name[$i]= $dataFollows['follows'][$i]['channel']['name']; // builds an array of all the names from the channel object
 }
- $datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);
+$datastream=json_decode(@file_get_contents('https://api.twitch.tv/kraken/streams?stream_type=live&limit=100&channel=' .implode(",",$name) .''), true);
  // gets an object containing the streams which channels  are part of $dataFollow object  and they are online
 
  // the Implode funiction converts the name array in to a string with commas i.e. trumpsc,firebat,Amaz,... which is what we need to  to build the correct stream object

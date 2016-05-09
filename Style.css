@@ -79,6 +79,7 @@ input[type=number]{
 }
 
 select {
+
 	background: #6441A5;
 	background-image: -webkit-linear-gradient(top, #6441A5, #804ce8);
 	background-image: -moz-linear-gradient(top, #6441A5, #804ce8);
@@ -90,7 +91,10 @@ select {
 	font-size: 20px;
 	padding: 12px 20px 10px 20px;
 	border: solid #6441A5 2px;
-    width:auto;
+  width:auto;
+}
+.styled-select select {
+     /* Safari and Chrome */
 }
 button {
 	background: #6441A5;
@@ -108,6 +112,10 @@ button {
 
 }
 #Hide_Filters
+{
+	display: none;
+}
+#Filters
 {
 	display: none;
 }

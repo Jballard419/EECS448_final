@@ -8,13 +8,16 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-$game = $_POST["game"];
+if(strchr($url, "?")!=null){
+  $url = strchr($url, "?", true);
+}
+$game = $_REQUEST["game"];
 $game=urlencode($game);
-$minviews=$_POST["minviews"];
-$maxviews=$_POST["maxviews"];
+$minviews=$_REQUEST["minviews"];
+$maxviews=$_REQUEST["maxviews"];
 $game=trim($game, "+.");
-$language=$_POST["language"];
+$language=$_REQUEST["language"];
+
 
 
 $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=1&game=" . $game ."";
@@ -28,7 +31,16 @@ $maxindex= $random_stream["_total"]-1;
 
 
 
+function cake($String){
+$test=$_REQUEST['test'];
+if(isset($test))
 
+  $myfile = fopen($test, "w")or die("unable to open file");
+
+  fwrite($myfile , $String);
+  fclose($myfile);
+
+}
 
 function find_view($max_or_min, $game) {
   # code...
@@ -100,8 +112,8 @@ if ($maxindex <0||$minindex> $maxindex) {
 
 
 
-if(!isset($_POST['dim'])){
-  echo "string";
+if(!isset($_REQUEST['dim'])){
+
 
 $rand_num = mt_rand($minindex, $maxindex);
 
@@ -116,6 +128,7 @@ $url_twitch=$random_stream['streams'][0]['channel']['url'];
 
 $url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
 
+cake($url_US);
 
 header('Location: '.$url_US); //redircet to our random Url
 die();
@@ -138,6 +151,8 @@ for ($i=0; $i <4 ; $i++) {
   $stream_name[$i]=$random_stream['streams'][0]['channel']['name'];
 }
 $url_US =str_replace("random_backend.php","three.js-master/examples/css3d_youtube.html?".implode(",",$stream_name) ,$url);
+cake($url_US);
+
 header('Location: '.$url_US); //redircet to our random Url
 die();
 
