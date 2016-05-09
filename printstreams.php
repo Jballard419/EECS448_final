@@ -17,17 +17,13 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 for ($i=0; $i <10 ; $i++)
 {
   $name = $dataArray['top'][$i]['game']['name'];
-<<<<<<< HEAD
+
 
   //$nam=rawurlencode($name);
      $url_2 =str_replace("?", "&". urlencode($name),$url);
    $url_US =str_replace("index.html", "extension_random.php?game=". urlencode($name),$url_2);
    echo   "<a href=". $url_US . "> ";
-=======
-  $url_2 =str_replace("?", "&". urlencode($name),$url);
-  $url_US =str_replace("index.html", "extension_random.php?game=". urlencode($name),$url_2);
-  echo   "<a href=". $url_US . "> ";
->>>>>>> 25fcd101610211d3389a3af846d09547f09c9345
+
   $img= "http://static-cdn.jtvnw.net/ttv-boxart/". rawurlencode($name) . "-140x196.jpg";
   echo "<img src=". $img . "> </a>"; // prints off the name of each of the first ten games in the object  which will be the top games
 }

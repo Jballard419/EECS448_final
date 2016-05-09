@@ -7,11 +7,21 @@
 */
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-$user= $_POST["user"];
+$user= $_REQUEST["user"];
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if(strchr($url, "?")!=null){
+  $url = strchr($url, "?", true);
+}
 
 echo "<font =\"arial\">Streams now on twitch<font>";
-
+function cake($String){
+  $test=$_REQUEST['test'];
+  if(isset($test)){
+    $myfile = fopen($test, "w")or die("unable to open file");
+    fwrite($myfile , $String);
+    fclose($myfile);
+  }
+}
 $n=0; //offset variable
 do
 {
@@ -54,7 +64,7 @@ $rand_index = array_rand($namearr); // gets a random index of The urlarr
 
 $name= $namearr[$rand_index]; // get the url at the Random index
 $url =str_replace("randfollow.php","index.html?channel_name=". $name,$url);
-
+cake($url);
 
 header('Location: '.$url); //redircet to our random Url
 die(); // ends the PHP after the redirect so the browser makes it to the url

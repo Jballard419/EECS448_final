@@ -25,19 +25,17 @@ $language=$_REQUEST["language"];
 
 
 $unleash= "https://api.twitch.tv/kraken/streams?stream_type=live&language=" . $language . "&limit=1&game=" . $game ."";
-$random_stream= json_decode(@file_get_contents($unleash), true);;
+$random_stream= json_decode(@file_get_contents($unleash), true);
 $maxindex= $random_stream["_total"]-1;
 
 
 function cake($String){
-$test=$_REQUEST['test'];
-if(isset($test))
-
-  $myfile = fopen($test, "w")or die("unable to open file");
-
-  fwrite($myfile , $String);
-  fclose($myfile);
-
+  $test=$_REQUEST['test'];
+  if(isset($test)){
+    $myfile = fopen($test, "w")or die("unable to open file");
+    fwrite($myfile , $String);
+    fclose($myfile);
+  }
 }
 
 
@@ -104,7 +102,7 @@ if ($maxindex <0||$minindex> $maxindex)
   return;
 }
 
-<<<<<<< HEAD
+
 
 
 
@@ -119,14 +117,14 @@ if(!isset($_REQUEST['dim'])){
 
   $random_stream= json_decode(@file_get_contents($unleash), true);;
 
-cake($url_US);
+
 
   $name=$random_stream['streams'][0]['channel']['name'];
   $url_twitch=$random_stream['streams'][0]['channel']['url'];
 
 
   $url_US =str_replace("random_backend.php","index.html?channel_name=". $name,$url);
-
+  cake($url_US);
   header('Location: '.$url_US); //redircet to our random Url
   die();
 }
