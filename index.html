@@ -16,7 +16,7 @@
   <script src="object1.js"></script>
   <script src="button.js"> </script>
 
-<?php include 'printstreams.php' ?>
+<?php include 'printstreams.php'; ?>
 <?php include 'randomstream.php'; ?>
 
 <?php include 'randomFrontend.php'; ?>
@@ -30,7 +30,7 @@
   </style>
 </head>
 <body bgcolor="#6441a5" text="white"> <!-- get this in a Css file  -->
-<div id="rightpanel">
+<div id="leftpanel">
   <font face="arial"><center><h1>Twitch</h1></center></font>
 
 
@@ -40,13 +40,13 @@
 
     <center><font face="arial"><h2 class="authenticated hidden">Authenticated</h2></font></center>
     <div class="authenticated hidden">
-      <div id="logout">
-        <font face="arial"><button>Log Out</button></font>
-      </div>
+      	<div id="logout">
+        	<font face="arial"><button>Log Out</button></font>
+      	</div>
 
-      <div id="get-name">
-        <font face="arial"><button>Get TwitchTV Name</button></font>
-        <input readonly="readonly" size="50" value="Unknown"/>
+      	<div id="get-name">
+        	<font face="arial"><button>Get TwitchTV Name</button></font>
+        	<input readonly="readonly" size="50" value="Unknown"/>
       </div>
 
       <div id="get-stream-key">
@@ -65,26 +65,16 @@
     </form>
 
     <form action="randfollow.php" id="uservalue" method="post">
-      <br><font face="arial"> Enter Username </font></br>
+      <font face="arial"> Enter Username </font></br>
       <input type="text" name="user" value="Serpent99" >
       <!-- <input type="text" name="token" value=""> -->
 
       <input type= "submit" value="Find random online stream">
     </form>
 
-
-
-
-
-
-
-
-
-
-
       </form>
 
-
+	<br> <a href="http://people.eecs.ku.edu/~jballard/Final/test_bench.php">Click here to run tests!</a>
 
 </div>
 </body>

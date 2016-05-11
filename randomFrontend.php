@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 $dataArray = json_decode(@file_get_contents('https://api.twitch.tv/kraken/games/top?limit=50'), true);
-echo "<form action= ' random_backend.php' method='post' id='rand_stream'>";
+echo "<div id='leftpanel'><form action= ' random_backend.php' method='post' id='rand_stream'>";
 echo "choose a game";
 echo "<select name='game'>";
 echo " <option value='' > Give me anything </option>";
@@ -46,5 +46,5 @@ echo " max views<input type='number'  name='maxviews'  min='0' checked> </br> </
 echo " <input type= 'submit' value='Find random online stream'> ";
 echo "</form> ";
 echo "<button id=Add_Filters onclick='filters()'>Add Filters</button>";
-echo "<button id=Hide_Filters onclick='filters()'> Hide Filters</button>";
+echo "<button id=Hide_Filters onclick='filters()'> Hide Filters</button></div>";
 ?>
